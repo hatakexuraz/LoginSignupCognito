@@ -1,0 +1,33 @@
+{
+  "auth": {
+    "androidgettingstarte02ae7a46": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "api": {
+    "androidgettingstarte": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authandroidgettingstarte02ae7a46"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  },
+  "storage": {
+    "image": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
